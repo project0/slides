@@ -1,0 +1,64 @@
+@import url(../reveal.js/dist/reveal.css);
+@import url(../reveal.js/dist/theme/night.css);
+@import url(../reveal.js/plugin/highlight/monokai.css);
+
+@font-face {
+  font-family: as24regular;
+  src: url("MakeItSans-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: as24bold;
+  src: url("MakeItSans-Bold.otf") format("opentype");
+}
+
+:root {
+  --as24-black-120:#000;
+  --as24-black-100:#333;
+  --as24-black-70:#7c7c7c;
+  --as24-black-60:#949494;
+  --as24-black-30:#dcdcdc;
+  --as24-black-20:#f4f4f4;
+  --as24-white:#fff;
+  --as24-yellow-100: #f5f200;
+  --as24-yellow-60: #F9F766;
+  --as24-blue-160: #083B78;
+  --as24-blue-120: #0C4F90;
+  --as24-blue-100: #1166A8;
+
+  --as24-success-100: #00d0b2;
+  --as24-success-20: #ccffe2;
+  --as24-warning-100: #f2ca26;
+  --as24-warning-20: #fef9d3;
+  --as24-error-100: #e74b3c;
+  --as24-error-20: #fde7d8;
+  --as24-info-100: #237fff;
+  --as24-info-20: #d3ecff;
+}
+
+.header img {
+  height: 40pt;
+  margin:0pt;
+  padding-right: 20pt;
+}
+.header {
+  color: var(--as24-black-70);
+  font-weight: bold;
+  font-family: 'as24bold';
+  display: flex;
+  justify-content: middle;
+  align-items: center;
+}
+
+.reveal {
+  font-family: "as24regular";
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color:  var(--as24-yellow-60);
+  font-family: 'as24bold';
+}
