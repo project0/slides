@@ -61,12 +61,12 @@ Cookie: optimizelyEndUserId=o............
 
 ### Known http/1.x header limits
 
-- AWS Cloudfront: Total request limit of **20 K** (path + query string + headers)
-- S3: Total header request limit of **8192 bytes**
-- AWS ELB: single header: **16 K**, whole header: **64 K**
-- NGINX/Jigsaw: request headers up to **21 K**
-- NodeJS: Default max header limit of **8192** bytes
-- Java/Scala and the play framework: Defaults to **8192** bytes (not validated)
+- AWS Cloudfront: Total request limit of 20 K (path + query string + headers) <!-- .element: class="fragment" data-fragment-index="0" -->
+- S3: Total header request limit of 8192 bytes <!-- .element: class="fragment" data-fragment-index="0" -->
+- AWS ELB: single header: 16 K, whole header: 64 K <!-- .element: class="fragment" data-fragment-index="0" -->
+- NGINX/Jigsaw: request headers up to 21 K <!-- .element: class="fragment" data-fragment-index="1" -->
+- NodeJS: Default max header limit of 8192 bytes <!-- .element: class="fragment" data-fragment-index="2" -->
+- Play framework: Defaults to 8192 bytes (not validated) <!-- .element: class="fragment" data-fragment-index="2" -->
 <!-- vertical -->
 
 ## Mitigation
