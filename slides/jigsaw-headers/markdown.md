@@ -1,4 +1,4 @@
-## Recap: What is jigsaw?
+## What is jigsaw?
 
 _UI composition layer_
 
@@ -37,14 +37,16 @@ _There is still a scrollbar..._
 
 <!-- vertical -->
 
-### Cookie size != header size
+### Cookie size != request size
 
-A typical browser request includes multiple headers
+A typical browser request includes the request URI and multiple headers
 
-`base 350 bytes + cookie header 4500 bytes (home page)`
+`request line (80 bytes) + header (base 335 bytes + cookie 4500 bytes (home page))`
 
 ```ht
-GET / HTTP/1.1
+GET /lst?lm_premium=true&sort=standard&desc=0&ustate=N%2CU&cy=D&atype=C HTTP/1.1
+<METHOD> <URI> <HTTP VERSION>
++
 Host: www.autoscout24.de
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
@@ -67,15 +69,18 @@ Cookie: optimizelyEndUserId=o............
 - NGINX/Jigsaw: request headers up to 21 K <!-- .element: class="fragment" data-fragment-index="1" -->
 - NodeJS: Default max header limit of 8192 bytes <!-- .element: class="fragment" data-fragment-index="2" -->
 - Play framework: Defaults to 8192 bytes (not validated) <!-- .element: class="fragment" data-fragment-index="2" -->
+
+> There might be different limits for header size and request URI size
+
 <!-- vertical -->
 
 ## Mitigation
 
-- Jigsaw header limits are very high (21K) configured
+- Jigsaw header limits is aligned with cloudfront limit (**21k**)
 - Jigsaw has been configured to prevent sending cookie headers to **S3**
-- Services should never set cookies at **root path** `/`!
-- Services can increase max header size at their side
-- Anything else to avoid blowing the cookie
+- Avoid setting cookies at **root path** `/`!
+- Increase the accepted max header request size
+- Anything else to avoid blowing the cookies
 
 <!-- section -->
 
