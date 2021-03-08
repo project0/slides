@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DNS</title>
+    <link rel="stylesheet" href="../assets/theme_as24.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="header">
+        <img src="../assets/AutoScout24_horizontal_solid_inverse.svg" />
+        DNS
+      </div>
+
+      <div class="slides">
+        <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+        <section
+          data-markdown="markdown.md"
+          data-separator="<!-- section -->"
+          data-separator-vertical="<!-- vertical -->"
+        ></section>
+      </div>
+    </div>
+
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="../reveal.js/plugin/notes/notes.js"></script>
+
+    <script>
+      Reveal.initialize({
+        // The "normal" size of the presentation, aspect ratio will
+        // be preserved when the presentation is scaled to fit different
+        // resolutions. Can be specified using percentage units.
+        width: '80%',
+        height: '90%',
+
+        // Factor of the display size that should remain empty around
+        // the content
+        margin: 0.04,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 2.0,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
